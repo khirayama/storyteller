@@ -1,4 +1,4 @@
-# Storyteller
+# <img src="./images/logo_text.png" height="60" alt="storyteller"></img>
 
 A tool that declarative visualizing your application.
 
