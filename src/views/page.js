@@ -17,10 +17,15 @@ export class Page {
     const color = this.scene.color || 'rgba(0, 0, 0, 0.32)';
 
     this.context.fillStyle = color;
+    this.context.shadowColor = 'rgba(0, 0, 0, 0.24)';
+    this.context.shadowBlur = 3;
+    this.context.shadowOffsetX = 0;
+    this.context.shadowOffsetY = 0;
     if (this.scene.screen.img) {
       this.context.drawImage(this.scene.screen.img, this.x, this.y, this.scene.screen.width, this.scene.screen.height);
     } else {
       this.context.fillRect(this.x, this.y, this.scene.screen.width, this.scene.screen.height);
     }
+    this.context.shadowBlur = 0;
   }
 }

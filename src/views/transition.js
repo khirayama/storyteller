@@ -9,9 +9,9 @@ export class Transition {
     this.render();
   }
 
-  renderStartPoint({startX, startY}) {
+  renderStartPoint({startX, startY, radius}) {
     this.context.beginPath();
-    this.context.arc(startX, startY, 12, 0, Math.PI * 2);
+    this.context.arc(startX, startY, radius, 0, Math.PI * 2);
     this.context.fill();
     this.context.stroke();
   }
@@ -70,6 +70,7 @@ export class Transition {
     const from = this.transition.from || {
       x: this.page.width,
       y: 0,
+      radius: 12,
     };
     const toOffset = this.transition.to.offset || {
       x: 0,
@@ -77,6 +78,7 @@ export class Transition {
     };
     const options = {
       color: this.transition.color || 'rgba(0, 0, 0, 0.48)',
+      radius: from.radius,
       room: this.transition.room || {x: 0, y: 0},
       startX: this.page.x + from.x,
       startY: this.page.y + from.y,
