@@ -2,7 +2,7 @@
 
 A tool that declarative visualizing your application.
 
-[DEMO](https://khirayama.github.io/storyteller/)
+[DEMO: Twitter Storyboard](https://khirayama.github.io/storyteller/)
 
 ## Installation
 
