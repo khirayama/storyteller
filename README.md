@@ -4,6 +4,8 @@ A tool that declarative visualizing your application.
 
 [DEMO: Twitter Storyboard](https://khirayama.github.io/storyteller/)
 
+![screenshot](./images/screenshot.png)
+
 ## Installation
 
 ## Examples
