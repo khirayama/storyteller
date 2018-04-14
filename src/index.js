@@ -1,6 +1,7 @@
 import { startStory } from './utils';
 import { Board } from './views/board';
-import { story } from './sample-story';
+//import { story } from './sample-story';
+import { story } from './twitter-story';
 import { BoardController } from './board-controller';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const canvasElement = window.document.querySelector('.storyteller');
 
     const board = new Board(canvasElement, generatedStory, {
-      rulerColor: 'rgba(0, 0, 0, 0.36)',
       padding: {
         x: 320,
         y: 200,
