@@ -5,7 +5,7 @@ const home = {
   grid: { x: 0, y: 0 },
   screen: {
     width: 300,
-    imagePath: '/images/twitter/home.png',
+    imagePath: './images/twitter/home.png',
   },
   transitions: [{
     color: transitionColor,
@@ -53,7 +53,7 @@ const postsShow = {
   grid: { x: 1, y: 0 },
   screen: {
     width: 300,
-    imagePath: '/images/twitter/posts_show.png',
+    imagePath: './images/twitter/posts_show.png',
   },
   transitions: [{
     color: transitionColor,
@@ -71,7 +71,7 @@ const postsNew = {
   grid: { x: 1, y: 1 },
   screen: {
     width: 300,
-    imagePath: '/images/twitter/posts_new.png',
+    imagePath: './images/twitter/posts_new.png',
   },
   transitions: [{
     color: transitionColor,
@@ -89,7 +89,7 @@ const search = {
   grid: { x: 1, y: 2 },
   screen: {
     width: 300,
-    imagePath: '/images/twitter/search.png',
+    imagePath: './images/twitter/search.png',
   },
   transitions: [],
 };
@@ -99,7 +99,7 @@ const notificationsIndex = {
   grid: { x: 1, y: 3 },
   screen: {
     width: 300,
-    imagePath: '/images/twitter/notifications_index.png',
+    imagePath: './images/twitter/notifications_index.png',
   },
   transitions: [],
 };
@@ -109,7 +109,7 @@ const menu = {
   grid: { x: 1, y: 4 },
   screen: {
     width: 300,
-    imagePath: '/images/twitter/menu.png',
+    imagePath: './images/twitter/menu.png',
   },
   transitions: [{
     color: transitionColor,
@@ -126,7 +126,7 @@ const profile = {
   grid: { x: 2, y: 0 },
   screen: {
     width: 300,
-    imagePath: '/images/twitter/profile.png',
+    imagePath: './images/twitter/profile.png',
   },
   transitions: [],
 };
