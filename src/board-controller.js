@@ -5,6 +5,10 @@ export class BoardController {
       x: 0,
       y: 0,
     };
+    this.pos = {
+      x: 0,
+      y: 0,
+    };
     this.scale = 1;
 
     this.board = board;
@@ -18,11 +22,44 @@ export class BoardController {
   }
 
   translate(x, y) {
+    this.pos.x += x;
+    this.pos.y += y;
     this.board.translate(x, y);
+  }
+
+  position(x, y) {
+    this.translate(-1 * this.pos.x, -1 * this.pos.y);
+    this.translate(x, y);
   }
 
   size(width, height) {
     this.board.size(width, height);
+  }
+
+  getCenter() {
+    const rulers = this.board.rulers;
+    const center = {
+      x: (rulers.x[0] + rulers.x[rulers.x.length - 1]) / 2,
+      y: (rulers.y[0] + rulers.y[rulers.y.length - 1]) / 2,
+    };
+    return center;
+  }
+
+  getSize() {
+    const rulers = this.board.rulers;
+    const size = {
+      width: rulers.x[rulers.x.length - 1],
+      height: rulers.y[rulers.y.length - 1],
+    };
+    return size;
+  }
+
+  fit(paddingX, paddingY) {
+    const size = this.getSize();
+    const width = this.board.el.width - paddingX * 2;
+    const scale = width / size.width;
+    this.position(paddingX, paddingY)
+    this.zoom(scale);
   }
 
   setEventListener() {

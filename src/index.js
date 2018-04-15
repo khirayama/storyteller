@@ -19,7 +19,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const controller = new BoardController(board);
     controller.size(window.innerWidth, window.innerHeight);
-    controller.zoom(0.2);
-    controller.translate(80, 100);
+    controller.fit(100, 100);
+
+    document.querySelector('.reset').addEventListener('click', () => {
+      controller.position(0, 0);
+    });
   });
 });
