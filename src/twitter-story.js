@@ -2,6 +2,8 @@ const transitionColor = '#1da1f2';
 
 const home = {
   id: '/home',
+  title: 'Home Screen',
+  description: `url: /\nDisplay timeline`,
   grid: { x: 0, y: 0 },
   screen: {
     width: 300,
