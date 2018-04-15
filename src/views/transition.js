@@ -66,6 +66,34 @@ export class Transition {
     this.context.stroke();
   }
 
+  renderFromDescription({startX, startY}) {
+    if (this.transition.from.description) {
+      const descriptionFontSize = this.transition.from.description.fontSize || 12;
+      const texts = this.transition.from.description.text.split('\n');
+      this.context.fillStyle = '#666';
+      this.context.textAlign = 'left';
+      this.context.font = `${descriptionFontSize}px san-serif`;
+      for (let i = 0; i < texts.length; i++) {
+        const text = texts[i];
+        this.context.fillText(text, startX + descriptionFontSize, startY - (texts.length * descriptionFontSize) + (descriptionFontSize * i));
+      }
+    }
+  }
+
+  renderToDescription({endX, endY}) {
+    if (this.transition.to.description) {
+      const descriptionFontSize = this.transition.to.description.fontSize || 12;
+      const texts = this.transition.to.description.text.split('\n');
+      this.context.fillStyle = '#666';
+      this.context.textAlign = 'right';
+      this.context.font = `${descriptionFontSize}px san-serif`;
+      for (let i = 0; i < texts.length; i++) {
+        const text = texts[i];
+        this.context.fillText(text, endX - descriptionFontSize * 2, endY - (texts.length * descriptionFontSize) + (descriptionFontSize * i));
+      }
+    }
+  }
+
   render() {
     const from = this.transition.from || {
       x: this.page.width,
@@ -86,11 +114,14 @@ export class Transition {
       endY: this.targetPage.y + toOffset.y,
     };
 
+    this.renderFromDescription(options);
+
     this.context.strokeStyle = options.color;
     this.context.fillStyle = options.color;
-
     this.renderStartPoint(options);
     this.renderTransitionLine(options);
     this.renderEndArrow(options);
+
+    this.renderToDescription(options);
   }
 }

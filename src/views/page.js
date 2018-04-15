@@ -17,16 +17,18 @@ export class Page {
 
   render() {
     const color = this.scene.color || 'rgba(0, 0, 0, 0.32)';
-    const titleFontSize = 20;
-    const descriptionFontSize = 14;
+    const titleFontSize = (this.title || {}).fontSize || 14;
     if (this.title) {
       this.context.fillStyle = '#666';
+      this.context.textAlign = 'left';
       this.context.font = `${titleFontSize}px san-serif`;
-      this.context.fillText(this.title, this.x, this.rulers.y[this.grid.y] + titleFontSize, this.width);
+      this.context.fillText(this.title.text, this.x, this.rulers.y[this.grid.y] + titleFontSize, this.width);
     }
     if (this.description) {
-      const texts = this.description.split('\n');
+      const descriptionFontSize = this.description.fontSize;
+      const texts = this.description.text.split('\n');
       this.context.fillStyle = '#666';
+      this.context.textAlign = 'left';
       this.context.font = `${descriptionFontSize}px san-serif`;
       for (let i = 0; i < texts.length; i++) {
         const text = texts[i];

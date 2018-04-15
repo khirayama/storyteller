@@ -2,8 +2,13 @@ const transitionColor = '#1da1f2';
 
 const home = {
   id: '/home',
-  title: 'Home Screen',
-  description: `url: /\nDisplay timeline`,
+  title: {
+    text: 'Home Screen',
+  },
+  description: {
+    fontSize: 14,
+    text: `url: /\nDisplay timeline`,
+  },
   grid: { x: 0, y: 0 },
   screen: {
     width: 300,
@@ -12,10 +17,20 @@ const home = {
   transitions: [{
     color: transitionColor,
     to: {
+      description: {
+        text: 'transition rate: 5%(Example)',
+      },
       id: '/posts/show',
       offset: { x: 0, y: 30, },
     },
-    from: { x: 244, y: 247, radius: 8, },
+    from: {
+      description: {
+        text: 'transition rate: 5%(Example)',
+      },
+      x: 244,
+      y: 247,
+      radius: 8,
+    },
   }, {
     color: transitionColor,
     room: { x: 60, y: 60, },
