@@ -1,6 +1,6 @@
 {
   "name": "@khirayama/storyteller",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A tool that declarative visualizing your application.",
   "main": "lib",
   "devEngines": {
