@@ -1,15 +1,28 @@
 {
-  "name": "storyteller",
+  "name": "@khirayama/storyteller",
   "version": "0.0.1",
-  "description": "",
-  "main": "src/index.js",
+  "description": "A tool that declarative visualizing your application.",
+  "main": "lib",
   "devEngines": {
     "node": "8.x || 9.x"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khirayama/storyteller.git"
+  },
+  "keywords": [
+    "storyboard"
+  ],
+  "bugs": {
+    "url": "https://github.com/khirayama/storyteller/issues"
+  },
+  "author": "khirayama",
+  "license": "MIT",
   "scripts": {
+    "prepublish": "npm run build:scripts",
     "dev": "concurrently 'npm run server' 'npm run build:scripts:watch'",
     "server": "browser-sync start -s ./docs --no-open",
-    "build:scripts": "webpack --mode production",
+    "build:scripts": "NODE_ENV=production webpack --mode production",
     "build:scripts:watch": "webpack -w --mode development"
   },
   "devDependencies": {
@@ -20,7 +33,5 @@
     "concurrently": "3.5.1",
     "webpack": "4.5.0",
     "webpack-cli": "2.0.14"
-  },
-  "author": "khirayama",
-  "license": "MIT"
+  }
 }
