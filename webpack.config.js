@@ -15,7 +15,15 @@ const config = {
   resolve: {
     extensions: ['.js', '.json'],
   },
-  devtool: 'inline-source-map',
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.output = {
+    filename: 'index.js',
+    path: __dirname + '/lib',
+  };
+} else {
+  config.devtool = 'inline-source-map';
+}
 
 module.exports = config;
