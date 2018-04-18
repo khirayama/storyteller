@@ -1,0 +1,36 @@
+{
+  "name": "@khirayama/storyteller-examples",
+  "version": "0.0.3",
+  "description": "Storyteller examples",
+  "main": "index.js",
+  "devEngines": {
+    "node": "8.x || 9.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khirayama/storyteller.git"
+  },
+  "keywords": [
+    "storyboard"
+  ],
+  "bugs": {
+    "url": "https://github.com/khirayama/storyteller/issues"
+  },
+  "author": "khirayama",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently 'npm run server' 'npm run build:scripts:watch'",
+    "server": "browser-sync start -s ../docs --no-open",
+    "build:scripts": "NODE_ENV=production webpack --mode production",
+    "build:scripts:watch": "webpack -w --mode development"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.44",
+    "@babel/preset-env": "7.0.0-beta.44",
+    "babel-loader": "8.0.0-beta.2",
+    "browser-sync": "2.23.6",
+    "concurrently": "3.5.1",
+    "webpack": "4.5.0",
+    "webpack-cli": "2.0.14"
+  }
+}
