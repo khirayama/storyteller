@@ -20,20 +20,11 @@
   "license": "MIT",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "babel src --out-dir lib",
-    "dev": "concurrently 'npm run server' 'npm run build:scripts:watch'",
-    "server": "browser-sync start -s ./docs --no-open",
-    "build:scripts": "NODE_ENV=production webpack --mode production",
-    "build:scripts:watch": "webpack -w --mode development"
+    "build": "babel src --out-dir lib"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.44",
     "@babel/core": "7.0.0-beta.44",
-    "@babel/preset-env": "7.0.0-beta.44",
-    "babel-loader": "8.0.0-beta.2",
-    "browser-sync": "2.23.6",
-    "concurrently": "3.5.1",
-    "webpack": "4.5.0",
-    "webpack-cli": "2.0.14"
+    "@babel/preset-env": "7.0.0-beta.44"
   }
 }
